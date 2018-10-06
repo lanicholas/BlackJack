@@ -16,18 +16,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.Timer;
-
 import static android.graphics.drawable.Icon.createWithResource;
 
+
+/** A class controlling the game
+ *
+ *  @author Lillian Nicholas
+ *  @version 1.0 (10/6/18)
+ *  @since version 0.0
+ */
 public class GameActivity extends AppCompatActivity {
 
+    /** the game currently being player */
     private Game game;
 
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
+    /** Starts the game and deals cards to the player and dealer.
+     * Displays the cards and the points of the dealer's and player's hands
+    * @TargetApi(Build.VERSION_CODES.M)
+    * @Override
+    */
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
       //  Resources res = getResources();
@@ -166,6 +174,10 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
+    /** Determines if the dealer should hit or stand and if he
+     * hits, the card added to the hand is displayed
+     * @param dealer the hand of the dealer
+     */
     public void dealersTurn(Hand dealer)
     {
         int num = 16;
@@ -204,6 +216,10 @@ public class GameActivity extends AppCompatActivity {
         stand.setOnClickListener(null);
     }
 
+    /** Gets the image associated with the card
+     * @param card the card whose image we are finding
+     * @return an int that represent the image of the card
+     */
     public int findCardImg(Card card)
     {
 

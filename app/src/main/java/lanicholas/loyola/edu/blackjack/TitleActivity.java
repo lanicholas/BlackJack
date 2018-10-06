@@ -10,9 +10,18 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+/** A class coltrolling the title screen
+ *
+ *  @author Lillian Nicholas
+ *  @version 1.0 (10/6/18)
+ *  @since version 0.0
+ */
 public class TitleActivity extends AppCompatActivity {
 
-    @Override
+    /** Creates and displays the title screen
+     * @param savedInstanceState
+     * @Override
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title);

@@ -3,11 +3,22 @@ package lanicholas.loyola.edu.blackjack;
 import java.util.ArrayList;
 import java.util.Random;
 
+/** A class representing a stack of cards used in a game
+ *
+ *  @author Lillian Nicholas
+ *  @version 1.0 (10/6/18)
+ *  @since version 0.0
+ */
 public class Stack {
 
+    /** A list of cards representing a stack of cards */
     private ArrayList<Card> cards;
+
+    /** The number of card decks in the stack (either 1 or 2) */
     private int numDecks;
 
+    /** Creates a new Stack object
+     */
     public Stack()
     {
         cards = new ArrayList<Card>();
@@ -15,6 +26,8 @@ public class Stack {
         numDecks = (r.nextInt(2)) + 1;
     }
 
+    /** Creates a deck of cards and adds it to the stack numDecks times
+     */
     public void createDeck( )
     {
         for(int i = numDecks; i > 0; i--)
@@ -130,12 +143,17 @@ public class Stack {
         }
     }
 
+    /** Removes a card from the top of the stack
+     * @return the top card on the stack that was removed
+     */
     public Card removeCard(){
         Card topCard = cards.get(cards.size() - 1);
         cards.remove((cards.size()) - 1);
         return topCard;
     }
 
+    /** Shuffles the cards in the stack by randomly rearranging them
+     */
     public void shuffle(){
 
         for(int i = 0; i < 51; i++)
